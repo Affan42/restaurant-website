@@ -1,0 +1,1303 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@100..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(353, 93%, 50%);
+  --first-color-alt: hsl(353, 93%, 47%);
+  --first-color-dark: hsl(353, 50%, 15%);
+  --title-color: hsl(353, 48%, 12%);
+  --text-color: hsl(353, 16%, 32%);
+  --text-color-light: hsl(353, 16%, 48%);
+
+  --white-color: hsl(24, 86%, 90%);
+  --body-color: hsl(24, 100%, 85%);
+  --container-color: hsl(24, 86%, 92%);
+  --shadow-small-img: drop-shadow(0 4px 16px hsla(353, 100%, 8%, 0.2));
+  --shadow-big-img: drop-shadow(0 8px 24px hsla(353, 100%, 8%, 0.2));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Carter One", system-ui;
+  --biggest-font-size: 2.5rem;
+  --bigger-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 4.25rem;
+    --bigger-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*-----------------------------------*\
+  PreLoad
+\*-----------------------------------*/
+
+/* .pizza,
+.pizza_board,
+.home_introduction_d,
+.ingredients_ingredients,
+.ingredients_img_div,
+.popular_container,
+.card,
+.about_img,
+.contatUs_delivery_boy_img_div,
+.contact_us_details,
+.topings {
+  opacity: 0;
+} */
+
+/* down Animations */
+/* .card_1_anim {
+  animation: downText 1.4s ease 0s 1 normal forwards;
+}
+
+.card_2_anim {
+  animation: downText 1.4s ease 0.2s 1 normal forwards;
+}
+
+.card_3_anim {
+  animation: downText 1.4s ease 0.4s 1 normal forwards;
+}
+
+.card_4_anim {
+  animation: downText 1.4s ease 0.6s 1 normal forwards;
+}
+
+.card_5_anim {
+  animation: downText 1.4s ease 0.8s 1 normal forwards;
+}
+@media (max-width: 420px) {
+  .card_1_anim,
+  .card_2_anim,
+  .card_3_anim,
+  .card_4_anim,
+  .card_5_anim {
+    animation: downText 1.4s ease 0s 1 normal forwards;
+  }
+}
+.home_introduction_d_anim,
+.popular_section_anim {
+  animation: downText 1.4s ease 0s 1 normal forwards;
+}
+.topings_anim {
+  animation: downText 1.4s ease 3s 1 normal forwards;
+}
+@media (max-width: 680px) {
+  .topings_anim {
+    animation: downText 1.4s ease 1.8s 1 normal forwards;
+  }
+} */
+/* Left Animations */
+.leftAnim {
+  opacity: 0;
+  animation: leftBoard 1s ease 0.8s 1 normal forwards;
+}
+@media (max-width: 680px) {
+  .leftAnim {
+    animation: leftBoard 1s ease 0s 1 normal forwards;
+  }
+}
+.leftAnimForIngredients {
+  opacity: 0;
+  animation: leftBoard 1s ease 0s 1 normal forwards;
+}
+
+.contact_us_details_anim {
+  opacity: 0;
+  animation: leftBoard 1s ease 0s 1 normal forwards;
+}
+
+/* Pizza Intro Animation */
+.pizza_intro_anim {
+  animation: upPizza 1s ease 1.8s 1 normal forwards;
+}
+@media (max-width: 680px) {
+  .pizza_intro_anim {
+    opacity: 0;
+    animation: upPizza 1s ease 1s 1 normal forwards;
+  }
+}
+/* Right Animations */
+.rightAnim {
+  opacity: 0;
+  animation: rightImg 1s ease 0s 1 normal forwards;
+}
+
+.rightAnimforIngredients {
+  opacity: 0;
+  animation: rightImg 1s ease 0s 1 normal forwards;
+}
+
+.contactUs_delivery_boy_img_div_anim {
+  animation: rightImg 1.3s ease 0s 1 normal forwards;
+}
+
+/* About Texts Animations */
+.col_about_texts {
+  /* opacity: 0; */
+}
+
+.about_texts_anim {
+  /* opacity: 0; */
+  position: relative;
+  animation: leftDiv 1s ease 0s 1 normal forwards;
+}
+
+/* Keyframes */
+
+@keyframes downText {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leftBoard {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes upPizza {
+  0% {
+    opacity: 0;
+    transform: translateY(70px) rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rightImg {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leftDiv {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*-----------------------------------*\
+
+  #main.css
+
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  HOME
+\*-----------------------------------*/
+html {
+  height: min-content !important;
+}
+p {
+  font-family: var(--body-font);
+  color: black;
+  color: var(--text-color);
+}
+.main_container {
+  display: flex;
+  justify-content: center;
+}
+.main_container_1,
+.main_container_3,
+.main_container_5 {
+  padding: 0 120px;
+  background-color: var(--body-color) !important;
+}
+.main_container_2,
+.main_container_4,
+.main_container_6 {
+  background-color: var(--container-color);
+  padding: 90px 120px 110px 120px;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: var(--body-color) !important;
+  padding-left: 120px;
+  padding-right: 120px;
+  z-index: 11;
+  padding-block: 20px;
+  display: flex;
+  justify-content: center;
+}
+.nav_shadow {
+  box-shadow: 0px 5px 0px 0 rgba(0, 0, 0, 0.04);
+}
+.nav-item {
+  margin-right: 30px;
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  height: 3px;
+  width: 0;
+  background-color: red;
+  transition: all 0.5s;
+}
+.active::after {
+  width: 30px;
+  max-width: 30px;
+}
+
+.nav-link,
+.pizza_logo_text {
+  font-family: var(--second-font);
+  letter-spacing: 0.8px;
+}
+.pizza_and_topings_div {
+  width: min-content;
+  position: relative;
+  top: 60px;
+}
+
+.pizza_board {
+  position: absolute;
+  top: 5px;
+}
+
+.pizza {
+  height: 345px;
+}
+.pizza_board {
+  height: 460px;
+  top: -40px;
+}
+
+.topings {
+  height: 60px;
+  z-index: 3;
+}
+.leaf_1 {
+  top: -30px;
+  right: 40%;
+}
+.peperroni {
+  top: 20%;
+  right: -20px;
+}
+.mushroom {
+  top: 70%;
+  right: -15px;
+}
+.olive {
+  bottom: -20px;
+  left: 40%;
+}
+.leaf_2 {
+  left: -20px;
+  top: 60%;
+}
+.tomato {
+  left: -20px;
+  top: 20%;
+}
+.home_title,
+.about_title,
+.popular_title,
+.ingredients_title,
+.products_title {
+  font-size: 50px;
+  width: 400px;
+  font-family: var(--second-font);
+  color: var(--title-color);
+  margin-top: 40px;
+}
+.pizza_container {
+  margin-left: 90px;
+  position: relative;
+}
+.products_title {
+  max-width: 500px;
+}
+.about_title {
+  width: 500px;
+}
+.home_description {
+  max-width: 600px;
+}
+.home_description,
+.about_description,
+.popular_description {
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+.popular_title {
+  text-align: center;
+}
+.popular_description {
+  width: 400px;
+  max-width: 100%;
+  text-align: center;
+}
+.ingredients_title {
+  width: 600px;
+}
+.btn_order,
+.btn-about {
+  background-color: var(--first-color);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.2s;
+}
+
+.btn_order:hover,
+.btn-about:hover {
+  background-color: var(--first-color-alt);
+  transform: translate(-6px, -6px);
+  box-shadow: 5px 5px 0 0 black;
+}
+.btn_about_2:hover {
+  transform: translate(6px, -6px);
+  box-shadow: -5px 5px 0 0 black;
+}
+.btn_order:active,
+.btn-about:active {
+  background-color: var(--first-color-alt) !important;
+  transform: translate(-3px, -3px);
+  box-shadow: 3.5px 3.5px 0 0 black;
+}
+.btn_about_2:active {
+  transform: translate(3px, -3px);
+  box-shadow: -3.5px 3.5px 0 0 black;
+}
+.home {
+  padding-bottom: 200px;
+  width: 1110px;
+  max-width: 1110px;
+}
+.about_img {
+  height: 530px;
+}
+.swiper {
+  width: 850px;
+  margin: 0 !important;
+  padding-top: 100px !important;
+  overflow-y: visible !important;
+  overflow-x: clip !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.swiper-slide,
+.swiper-slide img {
+  transition: transform 0.5s;
+}
+.swiper-slide figure {
+  position: relative;
+}
+
+.popular_plate {
+  height: 18rem;
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+.swiper-slide-active {
+  animation: scalePizza 0.5s ease 0s 1 forwards;
+  transform: scale(1.35) !important;
+}
+.swiper-slide-active img {
+  transform: rotate(90deg) !important;
+}
+figure figcaption {
+  position: absolute;
+  inset: auto auto -50px 50%;
+  transform: translate(-50%);
+  white-space: nowrap;
+  transition: opacity 0.4s;
+}
+.swiper-slide figcaption {
+  opacity: 0;
+}
+.swiper-slide-active figcaption {
+  color: var(--first-color);
+  font-family: var(--second-font);
+  letter-spacing: 0.8px;
+  opacity: 1;
+}
+.popular_pizzas_board_img_div {
+  inset: 7px -25px 7px -25px;
+}
+.popular_pizzas {
+  cursor: pointer;
+}
+.popular_pizza_move_right {
+  transform: translateX(200px);
+}
+.popular_pizza_names {
+  color: var(--first-color);
+  font-family: var(--second-font);
+  font-size: var(--h3-font-size);
+  margin-top: -30px;
+}
+.ingredients_specific_div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ingredients_specific_div_img {
+  height: 70px;
+}
+.ingredients_specific_title {
+  margin-bottom: 0;
+  font-family: var(--second-font);
+}
+
+.popular_container {
+  margin: 10px 0 90px 0;
+  padding: 80px 0;
+}
+.card_image {
+  width: 80%;
+  transition: transform 0.5s;
+}
+.card {
+  border: none;
+  max-width: 16rem;
+  background: linear-gradient(to top, white, var(--body-color));
+}
+.card-text {
+  font-family: var(--second-font);
+  font-size: 19px;
+  color: black;
+}
+.card_price {
+  color: var(--first-color);
+  font-family: var(--second-font);
+  font-size: 1.8rem;
+}
+.btn-card {
+  background-color: var(--first-color);
+  color: white;
+  font-size: var(--h3-font-size);
+  padding: 1px 9px !important;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.btn-card:hover {
+  background-color: transparent;
+  color: black;
+  border: 2px black solid;
+  box-sizing: border-box;
+}
+.btn-card:active {
+  transform: scale(0.9);
+}
+.card-body {
+  align-items: start;
+}
+.ingredients_pizza_div_img {
+  width: 90%;
+}
+.row_products {
+  row-gap: 50px;
+}
+.card:hover .card_image {
+  transform: translateY(-10px);
+}
+#products {
+  margin-top: 40px;
+  margin-bottom: 70px;
+  padding-top: 6rem !important;
+}
+.main_container_5 {
+  display: flow-root;
+}
+
+.contact_wrapper {
+  height: 500px;
+  width: 100%;
+  max-width: 1110px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 50px;
+  margin: 0;
+  background-color: #220804;
+}
+
+.contatUs_delivery_boy_img {
+  width: 350px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: bottom;
+  margin: 0 20px;
+  min-width: 0;
+}
+
+.contact_title {
+  font-family: var(--second-font);
+  font-size: var(--bigger-font-size);
+  color: white;
+}
+.write_us_title,
+.delivery_title,
+.location_title {
+  font-family: var(--second-font);
+  font-size: var(--h2-font-size);
+  color: white;
+}
+.contact_details {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wrte_us_icons {
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  transition: margin-top 0.3s;
+}
+.wrte_us_icons:hover {
+  margin-top: -7px;
+  cursor: pointer;
+}
+
+.location_decsription_specific {
+  color: var(--first-color) !important;
+  letter-spacing: 0.1px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.fa-paper-plane {
+  font-size: 22px;
+}
+.write_us_icons_d {
+  gap: 17px;
+}
+.delivery_description,
+.location_decsription {
+  color: white;
+}
+.sticker {
+  position: absolute;
+  width: 50px;
+}
+.sticker_1 {
+  inset: 15% auto auto 10%;
+}
+.sticker_2 {
+  right: 5%;
+  bottom: 15%;
+}
+.sticker_3 {
+  width: 60px;
+  right: 3%;
+  top: 15%;
+}
+#contact {
+  padding-top: 100px;
+  width: 100%;
+}
+.scroll_top_btn {
+  inset: auto 40px 40px auto;
+  padding: 9px 15px;
+  transition: transform 0.4s;
+}
+.nav_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  cursor: pointer;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.overlay_visible {
+  display: block;
+}
+.scroll_top_btn:hover {
+  transform: translateY(-10px);
+}
+
+.upScrollAnim {
+  animation: upArrowAnim 0.8s ease 0.1s 1 forwards;
+}
+@keyframes upArrowAnim {
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.navbar_toggler {
+  font-size: 29px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  transition: transform 0.6s;
+  display: none;
+  background-color: var(--body-color);
+}
+.navbar_toggler:hover {
+  transform: rotate(180deg);
+}
+
+.navbar_container {
+  height: 50px;
+  max-width: 1110px;
+}
+.navbar-brand .nav-link {
+  height: 100%;
+}
+
+.navbar-brand {
+  height: 80px;
+}
+
+.cross_icon_d {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  font-size: 20px;
+  padding: 0 40px 20px 0;
+}
+.fa-x {
+  cursor: pointer;
+  display: none;
+}
+
+.cross_icon_visible {
+  display: block;
+}
+.logo {
+  height: 30px;
+}
+.nav_item_last {
+  margin: 0;
+}
+.row_products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px 30px;
+}
+
+.pizza_img_content {
+  position: relative;
+}
+.position_fixed {
+  position: fixed !important;
+}
+
+.leaf_svg,
+.pizza_svg {
+  width: 60px;
+  position: absolute;
+}
+.pizza_svg {
+  top: 6rem;
+  left: 23rem;
+}
+.leaf_svg {
+  top: 24rem;
+  left: 16rem;
+}
+.about_wrapper {
+  display: flex;
+  gap: 90px;
+  flex-direction: row-reverse;
+  max-width: 1110px;
+}
+.about_wrapper :is(.col_about_texts, .col_img_about) {
+  flex: 1;
+}
+footer {
+  background-color: var(--container-color);
+  padding: 0 120px 100px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .heading {
+  text-align: center;
+  color: var(--first-color);
+  font-family: var(--second-font);
+  font-size: 2rem;
+}
+footer .description {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer_subscribe {
+  margin-left: 90px;
+}
+.footer_description_titles {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: var(--second-font);
+}
+.footer_social_handles .icons_wrapper {
+  display: flex;
+  gap: 20px;
+  font-size: 22px;
+  color: var(--first-color);
+}
+.footer_inputs_div input:is(:active, :focus) {
+  box-shadow: 0 0 0 3px var(--container-color), 0 0 0 6px orange;
+}
+.footer_inputs_div input {
+  padding-left: 20px !important;
+  width: 300px;
+}
+.btn_footer {
+  inset: 10px 10px 10px auto;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+.payment_methods img {
+  width: 40px;
+  cursor: pointer;
+}
+.footer_brand_icon {
+  cursor: pointer;
+}
+.footer_links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+.footer_links a {
+  color: rgb(175, 175, 175);
+}
+.img_wrapper {
+  display: flex;
+  gap: 10px;
+}
+.footer_description {
+  max-width: 1110px;
+}
+.col_about_texts .sticker {
+  position: absolute;
+  right: 40%;
+  bottom: 20%;
+}
+
+@media (max-width: 1240px) {
+  .about_img {
+    height: 400px;
+  }
+  .col_about_texts .sticker {
+    bottom: 10%;
+  }
+  .footer_description {
+    display: grid !important;
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+  }
+  .footer_description
+    :is(.footer_social_handles, .footer_subscribe, .payment_methods) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+}
+@media (max-width: 1100px) {
+  .pizza_container {
+    display: none !important;
+  }
+.contact_title {
+  text-align: left;
+}
+  .contact_details {
+    grid-template-columns: 1fr;
+    width: max-content;
+    gap: 30px;
+  }
+  .contact_us_details {
+    align-items: center;
+    margin-right: 20%;
+  }
+  #contact {
+    display: flex;
+    justify-content: center;
+  }
+  .contact_wrapper {
+    height: 600px;
+  }
+  .home_title,
+  .about_title,
+  .popular_title,
+  .ingredients_title,
+  .products_title {
+    font-size: 55px;
+    width: auto;
+    margin-top: 0;
+  }
+  .home_description,
+  .about_description,
+  .popular_description {
+    font-size: 18px;
+  }
+  .home_introduction_d button,
+  .col_about_texts button {
+    padding: 10px 24px !important;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .col_img_about {
+    margin-top: 100px;
+  }
+  .about_img {
+    margin-left: 0;
+  }
+  .about_wrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+  .about_title,
+  .about_description {
+    text-align: center;
+  }
+  .col_img_about {
+    justify-content: center;
+  }
+  .col_img_about img {
+    height: 530px;
+  }
+  .col_about_texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main_container,
+  .navbar {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+  .col_about_texts .sticker {
+   right: 10%;
+  }
+  .pizza_svg {
+    top: 4rem;
+    left: 23rem;
+}
+}
+@media (max-width: 1000px) {
+  .row_products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    max-width: 20rem !important;
+    min-width: 12rem;
+  }
+
+  .contatUs_delivery_boy_img {
+    width: 350px;
+    aspect-ratio: initial;
+  }
+  .contact_wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    padding-top: 80px;
+  }
+  .contact_title {
+    font-size: 35px;
+    text-align: center;
+  }
+  .contact_details {
+    grid-template-columns: 1fr 1fr;
+    width: max-content;
+    margin-left: 40px;
+  }
+  .contact_us_details {
+    align-items: center;
+    margin-right: 0;
+  }
+  .swiper {
+    width: 700px;
+  }
+  .popular_plate {
+    top: 63%;
+    height: 15rem;
+  }
+  .sticker_2 {
+    height: 40px;
+    bottom: 40% !important;
+  }
+}
+@media (min-width: 880px) {
+  .cross_icon_d {
+    display: none !important;
+  }
+}
+@media (max-width: 880px) {
+  .navbar_toggler {
+    display: block;
+  }
+  .navbar-nav {
+    position: fixed;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    overflow: hidden;
+    top: -100%;
+    right: 0;
+    left: 0;
+    padding: 30px 0 40px 0px;
+    background-color: var(--body-color);
+    box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.1);
+    transform-origin: top;
+    transition: top 1.5s; /* Default for slide up */
+  }
+  .navbar-slide-down-anim {
+    top: 0;
+    transition: top 0.5s; /* Faster transition for slide down */
+  }
+  .nav-item {
+    margin: 0;
+  }
+  .ingredients_title {
+    font-size: 45px;
+  }
+  .ingredients_row {
+    flex-direction: column;
+  }
+
+  .ingredients_ingredients {
+    width: 100% !important;
+    flex: 0 !important;
+  }
+  .ingredients_specific_div {
+    width: 100% !important;
+    justify-content: left;
+  }
+  .ingredients_img_div {
+    margin-top: 100px;
+    justify-content: center !important;
+  }
+  .swiper {
+    width: 500px;
+  }
+  .popular_plate {
+    height: 11rem;
+    top: 65%;
+  }
+  .footer_description {
+    grid-template-columns: 1fr;
+  }
+  .sticker_1 {
+    inset: 4% auto auto 5%;
+    width: 40px;
+  }
+}
+
+@media (max-width: 680px) {
+  .pizza_img_content {
+    display: flex;
+    position: relative;
+    left: 50%;
+    justify-content: center;
+  }
+  .pizza_container {
+    display: flex !important;
+    width: 100%;
+    flex: auto;
+    margin-top: 120px;
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+  .pizza_and_topings_div {
+    top: 50px;
+  }
+  .pizza {
+    height: 300px;
+  }
+  .pizza_board {
+    height: 400px;
+  }
+
+
+  .col_img_about img {
+    height: 400px;
+  }
+  .leaf_svg{
+    top: 27rem;
+  }
+}
+@media (max-width: 560px) {
+  .pizza_img_content {
+    margin-left: 0vw;
+  }
+  .contact_details {
+    grid-template-columns: 1fr;
+  }
+  .contatUs_delivery_boy_img {
+    width: 250px;
+  }
+  .swiper {
+    width: calc(100vw - 20px);
+  }
+  .popular_plate {
+    height: 45vw;
+    top: 65%;
+  }
+  footer {
+    padding-left: 30px;
+    padding-bottom: 40px;
+    padding-right: 30px;
+  }
+  .sticker_2 {
+    height: 40px;
+    bottom: 30% !important;
+  }
+  .pizza_svg{
+    top: 14rem;
+    left: 14rem;
+  }
+}
+
+@media (max-width: 490px) {
+  .pizza_img_content {
+    height: 150px !important;
+  }
+  .pizza_and_topings_div {
+    top: 30px;
+  }
+  .pizza {
+    height: 250px;
+  }
+  .pizza_board {
+    height: 330px;
+  }
+  .topings {
+    height: 50px;
+  }
+  .home {
+    padding: 0px 0 100px 0 !important;
+  }
+  .col_img_about img {
+    height: 380px;
+  }
+
+  .main_container_1,
+  .main_container_3,
+  .main_container_5 {
+    padding: 0 60px;
+  }
+  .main_container_2,
+  .main_container_4,
+  .main_container_6 {
+    padding: 90px 30px 60px 30px;
+  }
+  .main_container_5{
+    padding: 0px 20px 00px 20px;
+  }
+  .main_container_6{
+    padding: 40px 20px 60px 20px;
+  }
+  .navbar {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .popular_section {
+    padding: 40px 0;
+  }
+  .col_img_about {
+    margin-top: 60px;
+  }
+  .ingredients_pizza_div_img {
+    width: 100%;
+  }
+  .home_title,
+  .about_title,
+  .popular_title,
+  .ingredients_title,
+  .products_title {
+    font-size: 35px;
+    width: auto;
+    margin-top: 0;
+  }
+  .home_description,
+  .about_description,
+  .popular_description,
+  .ingredients_specific_details {
+    font-size: 13px;
+  }
+  .home_introduction_d button,
+  .about_wrapper button {
+    font-size: 11px;
+    padding: 8px 20px;
+  }
+  .leaf_svg,
+  .pizza_svg {
+    display: block;
+  }
+  .home_introduction_d {
+    display: grid;
+    place-items: center;
+  }
+  .home_title,
+  .home_description{
+text-align: center;
+  }
+  .pizza_svg{
+    width: 50px;
+    inset: 30% -5% auto auto;
+  }
+  .leaf_svg{
+    width: 37px;
+    height: 40px;
+    inset: 40% auto auto -5%;
+  }
+  .col_about_texts .sticker{
+    width: 50px;
+    bottom: -20%;
+  }
+  .card {
+    min-width: 0;
+  }
+  .card-text{
+    font-size: 16px;
+  }
+  .card_price {
+    font-size: 1.5rem;
+  }
+  .btn-card{
+    font-size: 1rem;
+   height: 35px;
+  }
+}
+@media (max-width: 374px) {
+  .ingredients_specific_div_img {
+    height: 60px;
+  }
+  .home_introduction_d button,
+  .about_wrapper button {
+    font-size: 15px;
+  }
+
+  .about_img {
+    height: 320px;
+  }
+  .pizza_and_topings_div {
+    top: 20px;
+  }
+  .pizza {
+    height: 200px;
+  }
+  .topings {
+    height: 40px;
+  }
+  .pizza_board {
+    height: 260px;
+  }
+  .contact_title {
+    font-size: 25px;
+  }
+  .contatUs_delivery_boy_img {
+    width: 200px;
+  }
+  .about_img {
+    height: 300px !important;
+  }
+  .write_us_title,
+  .delivery_title,
+  .location_title {
+    font-size: var(--h3-font-size);
+  }
+  .delivery_description,
+  .location_decsription {
+    font-size: 13px;
+  }
+  footer .heading {
+    font-size: var(--h1-font-size);
+  }
+  .footer_inputs_div input {
+    width: 100%;
+  }
+  .main_container_6 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .row_products {
+   gap: 60px 15px;
+  }
+  .card-text{
+    font-size: 14px;
+  }
+  .card_price {
+    font-size: 1.3rem;
+  }
+  .btn-card{
+    font-size: 0.8rem;
+   height: 30px;
+  }
+  .pizza_svg {
+    width: 50px;
+    inset: 35% -5% auto auto;
+}
+.leaf_svg{
+  inset: 15% auto auto -5%;
+}
+}   
